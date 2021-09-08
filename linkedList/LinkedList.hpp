@@ -57,7 +57,7 @@ bool LinkedList<T>::search(T value) const
 	 }
 	}
 	return(isFound);
-	/** TODO
+	/** TODO  
 		Fix this method - fixed
 	*/
 }
@@ -97,7 +97,7 @@ void LinkedList<T>::addBack(T value)
 
 		temp->setNext( new Node<T>(value) );
 	}
- 
+
 	m_size++;
 }
 
