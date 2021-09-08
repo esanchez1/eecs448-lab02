@@ -1,6 +1,6 @@
 /**
-*	@author
-*	@date
+*	@author 
+*	@date 
 *	@file LinkedList.hpp
 *	@brief Implementation file for templated LinkedList class
 */
@@ -12,7 +12,7 @@ LinkedList<T>::LinkedList() : m_front(nullptr), m_size(0)
 }
 
 template <typename T>
-LinkedList<T>::~LinkedList()
+LinkedList<T>::~LinkedList() 
 {
 	while(!isEmpty())
 	{
@@ -29,23 +29,19 @@ bool LinkedList<T>::isEmpty() const
 template <typename T>
 int LinkedList<T>::size() const
 {
-	/** TODO
-		Fix this method - fixed
+	/** TODO 
+		Fix this method
 	*/
-	return(m_size);
+	return(0);
 }
 
 template <typename T>
 bool LinkedList<T>::search(T value) const
 {
-	if(m_size == 0) {
-		return false;
-	}
-
 	Node<T>* temp = m_front;
 	bool isFound = false;
-	T tempvalue = temp->getValue();
 
+<<<<<<< HEAD
 	for(int i = 0; i < m_size; i++) {
 		if(tempvalue == value) {
 			isFound = true;
@@ -59,7 +55,27 @@ bool LinkedList<T>::search(T value) const
 	return(isFound);
 	/** TODO  
 		Fix this method - fixed
+||||||| 1aac285... Initial commit
+	for(int i = 0; i < m_size; i++) {
+		if(tempvalue == value) {
+			isFound = true;
+			return isFound;
+		}
+		if(i < m_size-1) {
+		temp = temp->getNext();
+		tempvalue = temp->getValue();
+	 }
+	}
+	return(isFound);
+	/** TODO
+		Fix this method - fixed
+=======
+	/** TODO 
+		Fix this method
+>>>>>>> parent of 1aac285... Initial commit
 	*/
+
+	return(isFound);
 }
 
 template <typename T>
@@ -74,8 +90,8 @@ std::vector<T> LinkedList<T>::toVector() const
 		temp = temp->getNext();
 	}
 
-	return(vec);
-
+	return(vec);	
+	
 }
 
 template <typename T>
@@ -85,7 +101,7 @@ void LinkedList<T>::addBack(T value)
 
 	if(isEmpty())
 	{
-		m_front = new Node<T>(value);
+		m_front = new Node<T>(value);	
 	}
 	else
 	{
@@ -95,7 +111,7 @@ void LinkedList<T>::addBack(T value)
 			temp = temp->getNext();
 		}
 
-		temp->setNext( new Node<T>(value) );
+		temp->setNext( new Node<T>(value) );		
 	}
 
 	m_size++;
@@ -113,37 +129,16 @@ void LinkedList<T>::addFront(T value)
 template <typename T>
 bool LinkedList<T>::removeBack()
 {
-
 	Node<T>* lastNode = nullptr;
 	Node<T>* secondintoLast = nullptr;
 	bool isRemoved = false;
 
-	if(m_size == 0) {
-		std::cout << "List is Empty";
-		return false;
-	}
+	/** TODO 
+		Fix this method
+	*/
 
-	else if(m_size == 1) {
-			secondintoLast = m_front;
-			delete secondintoLast;
-			isRemoved = true;
-			m_size--;
-			return isRemoved;
-	}
-
-	else {
-	secondintoLast = m_front;
-	for(int i = 1; i < m_size-1; i++){
-		secondintoLast = secondintoLast->getNext();
-	}
-	lastNode = secondintoLast->getNext();
-	delete lastNode;
-	secondintoLast->setNext(nullptr);
-	isRemoved = true;
-	m_size--;
 	return(isRemoved);
-}
-}
+}	
 
 template <typename T>
 bool LinkedList<T>::removeFront()
