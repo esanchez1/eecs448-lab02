@@ -42,6 +42,7 @@ bool LinkedList<T>::search(T value) const
 	bool isFound = false;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	for(int i = 0; i < m_size; i++) {
 		if(tempvalue == value) {
 			isFound = true;
@@ -55,6 +56,24 @@ bool LinkedList<T>::search(T value) const
 	return(isFound);
 	/** TODO  
 		Fix this method - fixed
+||||||| 1aac285... Initial commit
+	for(int i = 0; i < m_size; i++) {
+		if(tempvalue == value) {
+			isFound = true;
+			return isFound;
+		}
+		if(i < m_size-1) {
+		temp = temp->getNext();
+		tempvalue = temp->getValue();
+	 }
+	}
+	return(isFound);
+	/** TODO
+		Fix this method - fixed
+=======
+	/** TODO 
+		Fix this method
+>>>>>>> parent of 1aac285... Initial commit
 ||||||| 1aac285... Initial commit
 	for(int i = 0; i < m_size; i++) {
 		if(tempvalue == value) {
